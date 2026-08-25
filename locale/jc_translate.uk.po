@@ -11,6 +11,9 @@ msgstr "Ваша поточна мова: @1."
 msgid "Choose Your Language"
 msgstr "Виберіть вашу мову"
 
+msgid "Choose Your Language:"
+msgstr "Виберіть вашу мову:"
+
 msgid "Save Language"
 msgstr "Зберегти мову"
 
