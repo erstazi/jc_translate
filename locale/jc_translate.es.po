@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Your Current Language: @1."
+msgstr "Tu idioma actual: @1."
+
+msgid "Choose Your Language"
+msgstr "Elige tu idioma"
+
+msgid "Choose Your Language:"
+msgstr "Elige tu idioma:"
+
+msgid "Save Language"
+msgstr "Guardar idioma"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Invalid language selection."
+msgstr "Selección de idioma no válida."
+
+msgid "Translation language set to @1."
+msgstr "Idioma de traducción establecido en @1."
+
+msgid "English"
+msgstr "Inglés"
+
+msgid "Spanish"
+msgstr "Español"
+
+msgid "French"
+msgstr "Francés"
+
+msgid "German"
+msgstr "Alemán"
+
+msgid "Polish"
+msgstr "Polaco"
+
+msgid "Turkish"
+msgstr "Turco"
+
+msgid "Chinese"
+msgstr "Chino"
+
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+msgid "Russian"
+msgstr "Ruso"
+
+msgid "Ukrainian"
+msgstr "Ucraniano"
+
+msgid "Dutch"
+msgstr "Neerlandés"
+
+msgid "Korean"
+msgstr "Coreano"
+
+msgid "Arabic"
+msgstr "Árabe"
+
+msgid "Hungarian"
+msgstr "Húngaro"

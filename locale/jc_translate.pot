@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: init.lua
+msgid "Your Current Language: @1."
+msgstr ""
+
+#: init.lua
+msgid "Choose Your Language"
+msgstr ""
+
+#: init.lua
+msgid "Choose Your Language:"
+msgstr ""
+
+#: init.lua
+msgid "Save Language"
+msgstr ""
+
+#: init.lua
+msgid "Cancel"
+msgstr ""
+
+#: init.lua
+msgid "Invalid language selection."
+msgstr ""
+
+#: init.lua
+msgid "Translation language set to @1."
+msgstr ""
+
+#: init.lua
+msgid "English"
+msgstr ""
+
+#: init.lua
+msgid "Spanish"
+msgstr ""
+
+#: init.lua
+msgid "French"
+msgstr ""
+
+#: init.lua
+msgid "German"
+msgstr ""
+
+#: init.lua
+msgid "Polish"
+msgstr ""
+
+#: init.lua
+msgid "Turkish"
+msgstr ""
+
+#: init.lua
+msgid "Chinese"
+msgstr ""
+
+#: init.lua
+msgid "Vietnamese"
+msgstr ""
+
+#: init.lua
+msgid "Russian"
+msgstr ""
+
+#: init.lua
+msgid "Ukrainian"
+msgstr ""
+
+#: init.lua
+msgid "Dutch"
+msgstr ""
+
+#: init.lua
+msgid "Korean"
+msgstr ""
+
+#: init.lua
+msgid "Arabic"
+msgstr ""
+
+#: init.lua
+msgid "Hungarian"
+msgstr ""

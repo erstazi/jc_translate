@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Language: ar\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Your Current Language: @1."
+msgstr "لغتك الحالية: @1."
+
+msgid "Choose Your Language"
+msgstr "اختر لغتك"
+
+msgid "Choose Your Language:"
+msgstr ":اختر لغتك"
+
+msgid "Save Language"
+msgstr "حفظ اللغة"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Invalid language selection."
+msgstr "اختيار لغة غير صالح."
+
+msgid "Translation language set to @1."
+msgstr "تم تعيين لغة الترجمة إلى @1."
+
+msgid "English"
+msgstr "الإنجليزية"
+
+msgid "Spanish"
+msgstr "الإسبانية"
+
+msgid "French"
+msgstr "الفرنسية"
+
+msgid "German"
+msgstr "الألمانية"
+
+msgid "Polish"
+msgstr "البولندية"
+
+msgid "Turkish"
+msgstr "التركية"
+
+msgid "Chinese"
+msgstr "الصينية"
+
+msgid "Vietnamese"
+msgstr "الفيتنامية"
+
+msgid "Russian"
+msgstr "الروسية"
+
+msgid "Ukrainian"
+msgstr "الأوكرانية"
+
+msgid "Dutch"
+msgstr "الهولندية"
+
+msgid "Korean"
+msgstr "الكورية"
+
+msgid "Arabic"
+msgstr "العربية"
+
+msgid "Hungarian"
+msgstr "المجرية"

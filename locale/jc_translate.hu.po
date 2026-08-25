@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Language: hu\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Your Current Language: @1."
+msgstr "Jelenlegi nyelved: @1."
+
+msgid "Choose Your Language"
+msgstr "Válaszd ki a nyelved"
+
+msgid "Choose Your Language:"
+msgstr "Válaszd ki a nyelved:"
+
+msgid "Save Language"
+msgstr "Nyelv mentése"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Invalid language selection."
+msgstr "Érvénytelen nyelvválasztás."
+
+msgid "Translation language set to @1."
+msgstr "A fordítási nyelv @1 értékre lett állítva."
+
+msgid "English"
+msgstr "Angol"
+
+msgid "Spanish"
+msgstr "Spanyol"
+
+msgid "French"
+msgstr "Francia"
+
+msgid "German"
+msgstr "Német"
+
+msgid "Polish"
+msgstr "Lengyel"
+
+msgid "Turkish"
+msgstr "Török"
+
+msgid "Chinese"
+msgstr "Kínai"
+
+msgid "Vietnamese"
+msgstr "Vietnámi"
+
+msgid "Russian"
+msgstr "Orosz"
+
+msgid "Ukrainian"
+msgstr "Ukrán"
+
+msgid "Dutch"
+msgstr "Holland"
+
+msgid "Korean"
+msgstr "Koreai"
+
+msgid "Arabic"
+msgstr "Arab"
+
+msgid "Hungarian"
+msgstr "Magyar"

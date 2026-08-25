@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Language: nl\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Your Current Language: @1."
+msgstr "Je huidige taal: @1."
+
+msgid "Choose Your Language"
+msgstr "Kies je taal"
+
+msgid "Choose Your Language:"
+msgstr "Kies je taal:"
+
+msgid "Save Language"
+msgstr "Taal opslaan"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Invalid language selection."
+msgstr "Ongeldige taalselectie."
+
+msgid "Translation language set to @1."
+msgstr "Vertaaltaal ingesteld op @1."
+
+msgid "English"
+msgstr "Engels"
+
+msgid "Spanish"
+msgstr "Spaans"
+
+msgid "French"
+msgstr "Frans"
+
+msgid "German"
+msgstr "Duits"
+
+msgid "Polish"
+msgstr "Pools"
+
+msgid "Turkish"
+msgstr "Turks"
+
+msgid "Chinese"
+msgstr "Chinees"
+
+msgid "Vietnamese"
+msgstr "Vietnamees"
+
+msgid "Russian"
+msgstr "Russisch"
+
+msgid "Ukrainian"
+msgstr "Oekraïens"
+
+msgid "Dutch"
+msgstr "Nederlands"
+
+msgid "Korean"
+msgstr "Koreaans"
+
+msgid "Arabic"
+msgstr "Arabisch"
+
+msgid "Hungarian"
+msgstr "Hongaars"

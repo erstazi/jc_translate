@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Language: vi\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Your Current Language: @1."
+msgstr "Ngôn ngữ hiện tại của bạn: @1."
+
+msgid "Choose Your Language"
+msgstr "Chọn ngôn ngữ của bạn"
+
+msgid "Choose Your Language:"
+msgstr "Chọn ngôn ngữ của bạn:"
+
+msgid "Save Language"
+msgstr "Lưu ngôn ngữ"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "Invalid language selection."
+msgstr "Lựa chọn ngôn ngữ không hợp lệ."
+
+msgid "Translation language set to @1."
+msgstr "Ngôn ngữ dịch đã được đặt thành @1."
+
+msgid "English"
+msgstr "Tiếng Anh"
+
+msgid "Spanish"
+msgstr "Tiếng Tây Ban Nha"
+
+msgid "French"
+msgstr "Tiếng Pháp"
+
+msgid "German"
+msgstr "Tiếng Đức"
+
+msgid "Polish"
+msgstr "Tiếng Ba Lan"
+
+msgid "Turkish"
+msgstr "Tiếng Thổ Nhĩ Kỳ"
+
+msgid "Chinese"
+msgstr "Tiếng Trung"
+
+msgid "Vietnamese"
+msgstr "Tiếng Việt"
+
+msgid "Russian"
+msgstr "Tiếng Nga"
+
+msgid "Ukrainian"
+msgstr "Tiếng Ukraina"
+
+msgid "Dutch"
+msgstr "Tiếng Hà Lan"
+
+msgid "Korean"
+msgstr "Tiếng Hàn"
+
+msgid "Arabic"
+msgstr "Tiếng Ả Rập"
+
+msgid "Hungarian"
+msgstr "Tiếng Hungary"

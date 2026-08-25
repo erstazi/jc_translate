@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Language: uk\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Your Current Language: @1."
+msgstr "Ваша поточна мова: @1."
+
+msgid "Choose Your Language"
+msgstr "Виберіть вашу мову"
+
+msgid "Save Language"
+msgstr "Зберегти мову"
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "Invalid language selection."
+msgstr "Недійсний вибір мови."
+
+msgid "Translation language set to @1."
+msgstr "Мову перекладу встановлено: @1."
+
+msgid "English"
+msgstr "Англійська"
+
+msgid "Spanish"
+msgstr "Іспанська"
+
+msgid "French"
+msgstr "Французька"
+
+msgid "German"
+msgstr "Німецька"
+
+msgid "Polish"
+msgstr "Польська"
+
+msgid "Turkish"
+msgstr "Турецька"
+
+msgid "Chinese"
+msgstr "Китайська"
+
+msgid "Vietnamese"
+msgstr "В'єтнамська"
+
+msgid "Russian"
+msgstr "Російська"
+
+msgid "Ukrainian"
+msgstr "Українська"
+
+msgid "Dutch"
+msgstr "Нідерландська"
+
+msgid "Korean"
+msgstr "Корейська"
+
+msgid "Arabic"
+msgstr "Арабська"
+
+msgid "Hungarian"
+msgstr "Угорська"

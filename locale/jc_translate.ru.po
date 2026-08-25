@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Your Current Language: @1."
+msgstr "Ваш текущий язык: @1."
+
+msgid "Choose Your Language"
+msgstr "Выберите ваш язык"
+
+msgid "Choose Your Language:"
+msgstr "Выберите ваш язык:"
+
+msgid "Save Language"
+msgstr "Сохранить язык"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Invalid language selection."
+msgstr "Неверный выбор языка."
+
+msgid "Translation language set to @1."
+msgstr "Язык перевода установлен на @1."
+
+msgid "English"
+msgstr "Английский"
+
+msgid "Spanish"
+msgstr "Испанский"
+
+msgid "French"
+msgstr "Французский"
+
+msgid "German"
+msgstr "Немецкий"
+
+msgid "Polish"
+msgstr "Польский"
+
+msgid "Turkish"
+msgstr "Турецкий"
+
+msgid "Chinese"
+msgstr "Китайский"
+
+msgid "Vietnamese"
+msgstr "Вьетнамский"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "Dutch"
+msgstr "Нидерландский"
+
+msgid "Korean"
+msgstr "Корейский"
+
+msgid "Arabic"
+msgstr "Арабский"
+
+msgid "Hungarian"
+msgstr "Венгерский"
