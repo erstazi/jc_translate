@@ -218,20 +218,26 @@ core.register_on_joinplayer(function(player)
   end
 end)
 
-local function get_chat_prefix(name)
-  if core.get_modpath("ranks")
-    and type(ranks) == "table"
-    and ranks.get_rank
-    and ranks.get_def then
-
+local function get_chat_prefix_text(name)
+  if core.get_modpath("ranks") and type(ranks) == "table" and ranks.get_rank and ranks.get_def then
     local rank = ranks.get_rank(name)
-
     if rank then
       local def = ranks.get_def(rank)
+      if def and def.prefix_text then
+        return def.prefix_text .. " "
+      end
+    end
+  end
+  return ""
+end
 
+local function get_chat_prefix(name)
+  if core.get_modpath("ranks") and type(ranks) == "table" and ranks.get_rank and ranks.get_def then
+    local rank = ranks.get_rank(name)
+    if rank then
+      local def = ranks.get_def(rank)
       if def and def.prefix and def.colour then
         local colour
-
         if type(def.colour) == "table" and core.rgba then
           colour = core.rgba(
             def.colour.r,
@@ -244,7 +250,6 @@ local function get_chat_prefix(name)
         else
           colour = "#ffffff"
         end
-
         return core.colorize(colour, def.prefix) .. " "
       end
     end
@@ -340,8 +345,9 @@ core.register_on_chat_message(function(name, message)
   local pending = 0
 
   local prefix = get_chat_prefix(name)
+  local prefix_text = get_chat_prefix_text(name)
 
-  core.log("action", "CHAT: " .. prefix .. "<" .. name .. "> " .. message)
+  core.log("action", "CHAT: " .. prefix_text .. "<" .. name .. "> " .. message)
 
   for target_language in pairs(languages_needed) do
     if target_language == source_language then
