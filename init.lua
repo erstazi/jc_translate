@@ -412,30 +412,29 @@ core.register_on_chat_message(function(name, message)
   local languages_needed = {}
 
   for _, player in ipairs(players) do
-
     local recipient_name = player:get_player_name()
-
     local target_language = get_player_language(player)
 
     recipients[recipient_name] = target_language
-
     languages_needed[target_language] = true
   end
-
-  local translated = {}
-
-  local pending = 0
 
   local prefix = get_chat_prefix(name)
   local prefix_text = get_chat_prefix_text(name)
 
+  -- Log the original message exactly as typed.
   core.log("action", "CHAT: " .. prefix_text .. "<" .. name .. "> " .. message)
 
+  -- Send immediately to players using the same language.
+  for recipient_name, language in pairs(recipients) do
+    if language == source_language then
+      core.chat_send_player(recipient_name, prefix .. "<" .. name .. "> " .. message )
+    end
+  end
+
+  -- Translate once per required target language.
   for target_language in pairs(languages_needed) do
-    if target_language == source_language then
-      translated[target_language] = message
-    else
-      pending = pending + 1
+    if target_language ~= source_language then
 
       translate_text(
         message,
@@ -443,34 +442,26 @@ core.register_on_chat_message(function(name, message)
         target_language,
         function(result)
 
-          if result then
-            translated[target_language] = result
-          else
-            translated[target_language] = message
-            core.log( "warning", "[" .. modname .. "] Translation failed: " .. source_language .. " -> " .. target_language )
+          local output = result or message
+
+          if not result then
+            core.log(
+              "warning",
+              "[" .. modname .. "] Translation failed: "
+                .. source_language .. " -> " .. target_language
+            )
           end
 
-          pending = pending - 1
-
-          if pending == 0 then
-            for recipient_name, language in pairs(recipients) do
-              local output = translated[language]
-              if output then
-                core.chat_send_player(recipient_name, prefix .. "<" .. name .. "> " .. output )
-              end
+          -- Send this translation immediately to everyone
+          -- who uses this language. Do NOT wait for other
+          -- language translations to finish.
+          for recipient_name, language in pairs(recipients) do
+            if language == target_language then
+              core.chat_send_player(recipient_name, prefix .. "<" .. name .. "> " .. output )
             end
           end
         end
       )
-    end
-  end
-
-  if pending == 0 then
-    for recipient_name, language in pairs(recipients) do
-      local output = translated[language]
-      if output then
-        core.chat_send_player(recipient_name, prefix .. "<" .. name .. "> " .. output )
-      end
     end
   end
 
