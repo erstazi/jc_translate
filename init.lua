@@ -258,11 +258,55 @@ local function get_chat_prefix(name)
   return ""
 end
 
+local function protect_usernames(text)
+  local names = {}
+  local protected = text
+
+  for _, player in ipairs(core.get_connected_players()) do
+    local name = player:get_player_name()
+
+    if name ~= "" then
+      table.insert(names, name)
+    end
+  end
+
+  -- Longest names first so overlapping names are handled correctly.
+  table.sort(names, function(a, b)
+    return #a > #b
+  end)
+
+  local placeholders = {}
+
+  for index, name in ipairs(names) do
+    local placeholder = "ZXQP" .. tostring(index) .. "ZXQ"
+
+    -- Escape Lua pattern characters in the username.
+    local escaped_name = name:gsub("([%%%^%$%(%)%.%[%]%*%+%-%?])", "%%%1")
+
+    protected = protected:gsub(escaped_name, placeholder)
+
+    placeholders[placeholder] = name
+  end
+
+  return protected, placeholders
+end
+
+
+local function restore_usernames(text, placeholders)
+  for placeholder, name in pairs(placeholders) do
+    text = text:gsub(placeholder, name)
+  end
+
+  return text
+end
+
 local function translate_text(text, source_language, target_language, callback)
   if source_language == target_language then
     callback(text)
     return
   end
+
+  local protected_text, placeholders = protect_usernames(text)
 
   if not API_KEY or API_KEY == "" then
     callback(nil, "API key is not configured")
@@ -273,7 +317,7 @@ local function translate_text(text, source_language, target_language, callback)
   local target = get_api_language(target_language)
 
   local request_data = core.write_json({
-    q = text,
+    q = protected_text,
     source = source,
     target = target,
     format = "text",
@@ -309,10 +353,9 @@ local function translate_text(text, source_language, target_language, callback)
       return
     end
 
-    callback(data.translatedText)
+    callback(restore_usernames(data.translatedText, placeholders))
   end)
 end
-
 
 core.register_on_chat_message(function(name, message)
   local sender = core.get_player_by_name(name)
