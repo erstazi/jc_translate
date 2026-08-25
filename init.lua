@@ -341,6 +341,8 @@ core.register_on_chat_message(function(name, message)
 
   local prefix = get_chat_prefix(name)
 
+  core.log("action", "CHAT: " .. prefix .. "<" .. name .. "> " .. message)
+
   for target_language in pairs(languages_needed) do
     if target_language == source_language then
       translated[target_language] = message
