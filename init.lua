@@ -258,6 +258,32 @@ local function get_chat_prefix(name)
   return ""
 end
 
+local function protect_urls(text)
+  local urls = {}
+  local index = 0
+
+  text = text:gsub("https?://%S+", function(url)
+    index = index + 1
+
+    local placeholder = "ZXQU" .. tostring(index) .. "ZXQ"
+    urls[placeholder] = url
+
+    return placeholder
+  end)
+
+  return text, urls
+end
+
+local function restore_urls(text, urls)
+  for placeholder, url in pairs(urls) do
+    text = text:gsub(placeholder, function()
+      return url
+    end)
+  end
+
+  return text
+end
+
 local function protect_usernames(text)
   local names = {}
   local protected = text
@@ -306,7 +332,10 @@ local function translate_text(text, source_language, target_language, callback)
     return
   end
 
-  local protected_text, placeholders = protect_usernames(text)
+  local protected_text, url_placeholders = protect_urls(text)
+  local username_placeholders
+
+  protected_text, username_placeholders = protect_usernames(protected_text)
 
   if not API_KEY or API_KEY == "" then
     callback(nil, "API key is not configured")
@@ -353,7 +382,17 @@ local function translate_text(text, source_language, target_language, callback)
       return
     end
 
-    callback(restore_usernames(data.translatedText, placeholders))
+    local restored = restore_usernames(
+      data.translatedText,
+      username_placeholders
+    )
+
+    restored = restore_urls(
+      restored,
+      url_placeholders
+    )
+
+    callback(restored)
   end)
 end
 
