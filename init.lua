@@ -139,7 +139,7 @@ local function show_language_formspec(name)
     "formspec_version[6]",
     "size[9.5,8]",
     "label[0.5,0.4;" .. S("Your Current Language: @1.", core.colorize("#FFFF00", escape_formspec(current_language) ) ) .. "]",
-    "label[0.5,1.1;" .. escape_formspec( S("Choose Your Language") ) .. ":]",
+    "label[0.5,1.1;" .. escape_formspec( S("Choose Your Language:") ) .. "]",
     "dropdown[0.5,1.4;7,0.8;language;",
     table.concat(language_list, ","),
     ";" .. current_index .. ";false]",
