@@ -218,6 +218,40 @@ core.register_on_joinplayer(function(player)
   end
 end)
 
+local function get_chat_prefix(name)
+  if core.get_modpath("ranks")
+    and type(ranks) == "table"
+    and ranks.get_rank
+    and ranks.get_def then
+
+    local rank = ranks.get_rank(name)
+
+    if rank then
+      local def = ranks.get_def(rank)
+
+      if def and def.prefix and def.colour then
+        local colour
+
+        if type(def.colour) == "table" and core.rgba then
+          colour = core.rgba(
+            def.colour.r,
+            def.colour.g,
+            def.colour.b,
+            def.colour.a
+          )
+        elseif type(def.colour) == "string" then
+          colour = def.colour
+        else
+          colour = "#ffffff"
+        end
+
+        return core.colorize(colour, def.prefix) .. " "
+      end
+    end
+  end
+
+  return ""
+end
 
 local function translate_text(text, source_language, target_language, callback)
   if source_language == target_language then
@@ -301,10 +335,11 @@ core.register_on_chat_message(function(name, message)
     languages_needed[target_language] = true
   end
 
-
   local translated = {}
 
   local pending = 0
+
+  local prefix = get_chat_prefix(name)
 
   for target_language in pairs(languages_needed) do
     if target_language == source_language then
@@ -331,7 +366,7 @@ core.register_on_chat_message(function(name, message)
             for recipient_name, language in pairs(recipients) do
               local output = translated[language]
               if output then
-                core.chat_send_player(recipient_name, core.format_chat_message( name, output ) )
+                core.chat_send_player(recipient_name, prefix .. "<" .. name .. "> " .. output )
               end
             end
           end
@@ -344,7 +379,7 @@ core.register_on_chat_message(function(name, message)
     for recipient_name, language in pairs(recipients) do
       local output = translated[language]
       if output then
-        core.chat_send_player( recipient_name, core.format_chat_message( name, output ) )
+        core.chat_send_player(recipient_name, prefix .. "<" .. name .. "> " .. output )
       end
     end
   end
