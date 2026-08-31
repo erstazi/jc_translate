@@ -258,35 +258,28 @@ local function get_chat_prefix(name)
   return ""
 end
 
-local function protect_urls(text)
-  local urls = {}
-  local index = 0
-
-  text = text:gsub("https?://%S+", function(url)
-    index = index + 1
-
-    local placeholder = "ZXQU" .. tostring(index) .. "ZXQ"
-    urls[placeholder] = url
-
-    return placeholder
-  end)
-
-  return text, urls
-end
-
-local function restore_urls(text, urls)
-  for placeholder, url in pairs(urls) do
-    text = text:gsub(placeholder, function()
-      return url
-    end)
-  end
+local function escape_html(text)
+  text = text:gsub("&", "&amp;")
+  text = text:gsub("<", "&lt;")
+  text = text:gsub(">", "&gt;")
+  text = text:gsub('"', "&quot;")
+  text = text:gsub("'", "&#39;")
 
   return text
 end
 
-local function protect_usernames(text)
+local function protect_urls_and_usernames(text)
+  text = escape_html(text)
+
+  -- Protect URLs first.
+  text = text:gsub(
+    "https?://[%w%-%._~:/%?#%[%]@!$&'()*+,;=%%]+",
+    function(url)
+      return '<span translate="no">' .. url .. '</span>'
+    end
+  )
+
   local names = {}
-  local protected = text
 
   for _, player in ipairs(core.get_connected_players()) do
     local name = player:get_player_name()
@@ -296,32 +289,37 @@ local function protect_usernames(text)
     end
   end
 
-  -- Longest names first so overlapping names are handled correctly.
   table.sort(names, function(a, b)
     return #a > #b
   end)
 
-  local placeholders = {}
+  for _, name in ipairs(names) do
+    local escaped_name = escape_html(name)
 
-  for index, name in ipairs(names) do
-    local placeholder = "ZXQP" .. tostring(index) .. "ZXQ"
+    escaped_name = escaped_name:gsub(
+      "([%%%^%$%(%)%.%[%]%*%+%-%?])",
+      "%%%1"
+    )
 
-    -- Escape Lua pattern characters in the username.
-    local escaped_name = name:gsub("([%%%^%$%(%)%.%[%]%*%+%-%?])", "%%%1")
-
-    protected = protected:gsub(escaped_name, placeholder)
-
-    placeholders[placeholder] = name
+    -- Protect the username and punctuation immediately following it.
+    text = text:gsub(
+      "(" .. escaped_name .. ")([,%.!%?:;]?)",
+      function(username, punctuation)
+        return '<span translate="no">'
+          .. username
+          .. punctuation
+          .. '</span>'
+      end
+    )
   end
 
-  return protected, placeholders
+  return text
 end
 
 
-local function restore_usernames(text, placeholders)
-  for placeholder, name in pairs(placeholders) do
-    text = text:gsub(placeholder, name)
-  end
+local function remove_translate_no_spans(text)
+  text = text:gsub('<span%s+translate%s*=%s*"no"%s*>(.-)</span>', "%1" )
+  text = text .. " "
 
   return text
 end
@@ -332,10 +330,7 @@ local function translate_text(text, source_language, target_language, callback)
     return
   end
 
-  local protected_text, url_placeholders = protect_urls(text)
-  local username_placeholders
-
-  protected_text, username_placeholders = protect_usernames(protected_text)
+  local protected_text = protect_urls_and_usernames(text)
 
   if not API_KEY or API_KEY == "" then
     callback(nil, "API key is not configured")
@@ -349,7 +344,7 @@ local function translate_text(text, source_language, target_language, callback)
     q = protected_text,
     source = source,
     target = target,
-    format = "text",
+    format = "html",
     api_key = API_KEY,
   })
 
@@ -382,15 +377,7 @@ local function translate_text(text, source_language, target_language, callback)
       return
     end
 
-    local restored = restore_usernames(
-      data.translatedText,
-      username_placeholders
-    )
-
-    restored = restore_urls(
-      restored,
-      url_placeholders
-    )
+    local restored = remove_translate_no_spans(data.translatedText)
 
     callback(restored)
   end)
