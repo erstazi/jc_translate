@@ -445,11 +445,7 @@ core.register_on_chat_message(function(name, message)
           local output = result or message
 
           if not result then
-            core.log(
-              "warning",
-              "[" .. modname .. "] Translation failed: "
-                .. source_language .. " -> " .. target_language
-            )
+            core.log("warning", "[" .. modname .. "] Translation failed: " .. source_language .. " -> " .. target_language )
           end
 
           -- Send this translation immediately to everyone
