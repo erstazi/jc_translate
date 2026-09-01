@@ -195,8 +195,6 @@ local function show_language_formspec(name)
     end
   end
 
-  core.log("ACTION", "player: " .. name .. " has " .. (translations_enabled and "true" or "false") )
-
   local current_language = S(LANGUAGES[current] or current)
 
   local formspec = table.concat({
