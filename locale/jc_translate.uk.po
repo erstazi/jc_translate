@@ -5,6 +5,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "Save Language"
+msgstr "Зберегти мову"
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "Enable Translations?"
+msgstr "Увімкнути переклад?"
+
+msgid "NO"
+msgstr "НІ"
+
+msgid "YES"
+msgstr "ТАК"
+
+msgid "Translations are enabled."
+msgstr "Переклади увімкнено."
+
+msgid "Translations are disabled."
+msgstr "Переклади вимкнено."
+
+msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
+msgstr "*** МОВА: @1 використовує @2. Мова перекладача: @3. Відповідає мові клієнта: @4. Переклади увімкнено: @5."
+
 msgid "Your Current Language: @1."
 msgstr "Ваша поточна мова: @1."
 
@@ -13,12 +40,6 @@ msgstr "Виберіть вашу мову"
 
 msgid "Choose Your Language:"
 msgstr "Виберіть вашу мову:"
-
-msgid "Save Language"
-msgstr "Зберегти мову"
-
-msgid "Cancel"
-msgstr "Скасувати"
 
 msgid "Invalid language selection."
 msgstr "Недійсний вибір мови."

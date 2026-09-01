@@ -6,6 +6,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: init.lua
+msgid "Save"
+msgstr ""
+
+#: init.lua
+msgid "Save Language"
+msgstr ""
+
+#: init.lua
+msgid "Cancel"
+msgstr ""
+
+msgid "Enable Translations?"
+msgstr ""
+
+msgid "NO"
+msgstr ""
+
+msgid "YES"
+msgstr ""
+
+msgid "Translations are enabled."
+msgstr ""
+
+msgid "Translations are disabled."
+msgstr ""
+
+msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
+msgstr ""
+
+#: init.lua
 msgid "Your Current Language: @1."
 msgstr ""
 
@@ -15,14 +45,6 @@ msgstr ""
 
 #: init.lua
 msgid "Choose Your Language:"
-msgstr ""
-
-#: init.lua
-msgid "Save Language"
-msgstr ""
-
-#: init.lua
-msgid "Cancel"
 msgstr ""
 
 #: init.lua

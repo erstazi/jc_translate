@@ -5,6 +5,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Save Language"
+msgstr "Enregistrer la langue"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Enable Translations?"
+msgstr "Activer les traductions ?"
+
+msgid "NO"
+msgstr "NON"
+
+msgid "YES"
+msgstr "OUI"
+
+msgid "Translations are enabled."
+msgstr "Les traductions sont activées."
+
+msgid "Translations are disabled."
+msgstr "Les traductions sont désactivées."
+
+msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
+msgstr "*** LANGUE : @1 utilise @2. Langue du traducteur : @3. Correspond à la langue du client : @4. Traductions activées : @5."
+
 msgid "Your Current Language: @1."
 msgstr "Votre langue actuelle : @1."
 
@@ -13,12 +40,6 @@ msgstr "Choisissez votre langue"
 
 msgid "Choose Your Language:"
 msgstr "Choisissez votre langue:"
-
-msgid "Save Language"
-msgstr "Enregistrer la langue"
-
-msgid "Cancel"
-msgstr "Annuler"
 
 msgid "Invalid language selection."
 msgstr "Sélection de langue invalide."

@@ -5,6 +5,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Save"
+msgstr "Mentés"
+
+msgid "Save Language"
+msgstr "Nyelv mentése"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Enable Translations?"
+msgstr "Fordítások engedélyezése?"
+
+msgid "NO"
+msgstr "NEM"
+
+msgid "YES"
+msgstr "IGEN"
+
+msgid "Translations are enabled."
+msgstr "A fordítások engedélyezve vannak."
+
+msgid "Translations are disabled."
+msgstr "A fordítások le vannak tiltva."
+
+msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
+msgstr "*** NYELV: @1 ezt használja: @2. A fordító nyelve: @3. Megegyezik a kliens nyelvével: @4. Fordítások engedélyezve: @5."
+
 msgid "Your Current Language: @1."
 msgstr "Jelenlegi nyelved: @1."
 
@@ -13,12 +40,6 @@ msgstr "Válaszd ki a nyelved"
 
 msgid "Choose Your Language:"
 msgstr "Válaszd ki a nyelved:"
-
-msgid "Save Language"
-msgstr "Nyelv mentése"
-
-msgid "Cancel"
-msgstr "Mégse"
 
 msgid "Invalid language selection."
 msgstr "Érvénytelen nyelvválasztás."

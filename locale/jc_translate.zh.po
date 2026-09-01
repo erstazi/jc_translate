@@ -5,6 +5,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Save"
+msgstr "儲存"
+
+msgid "Save Language"
+msgstr "保存语言"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Enable Translations?"
+msgstr "啟用翻譯？"
+
+msgid "NO"
+msgstr "否"
+
+msgid "YES"
+msgstr "是"
+
+msgid "Translations are enabled."
+msgstr "翻譯已啟用。"
+
+msgid "Translations are disabled."
+msgstr "翻譯已停用。"
+
+msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
+msgstr "*** 語言：@1 正在使用 @2。翻譯器語言：@3。與用戶端語言相符：@4。翻譯已啟用：@5。"
+
 msgid "Your Current Language: @1."
 msgstr "您当前的语言：@1。"
 
@@ -13,12 +40,6 @@ msgstr "选择您的语言"
 
 msgid "Choose Your Language:"
 msgstr "选择您的语言："
-
-msgid "Save Language"
-msgstr "保存语言"
-
-msgid "Cancel"
-msgstr "取消"
 
 msgid "Invalid language selection."
 msgstr "无效的语言选择。"

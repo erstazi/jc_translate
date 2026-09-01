@@ -5,6 +5,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Save"
+msgstr "Kaydet"
+
+msgid "Save Language"
+msgstr "Dili Kaydet"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Enable Translations?"
+msgstr "Çeviriler etkinleştirilsin mi?"
+
+msgid "NO"
+msgstr "HAYIR"
+
+msgid "YES"
+msgstr "EVET"
+
+msgid "Translations are enabled."
+msgstr "Çeviriler etkinleştirildi."
+
+msgid "Translations are disabled."
+msgstr "Çeviriler devre dışı bırakıldı."
+
+msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
+msgstr "*** DİL: @1, @2 kullanıyor. Çevirmen dili: @3. İstemci diliyle eşleşiyor: @4. Çeviriler etkin: @5."
+
 msgid "Your Current Language: @1."
 msgstr "Mevcut diliniz: @1."
 
@@ -13,12 +40,6 @@ msgstr "Dilinizi seçin"
 
 msgid "Choose Your Language:"
 msgstr "Dilinizi seçin:"
-
-msgid "Save Language"
-msgstr "Dili Kaydet"
-
-msgid "Cancel"
-msgstr "İptal"
 
 msgid "Invalid language selection."
 msgstr "Geçersiz dil seçimi."

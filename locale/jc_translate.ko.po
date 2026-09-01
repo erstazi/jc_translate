@@ -5,6 +5,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Save"
+msgstr "저장"
+
+msgid "Save Language"
+msgstr "언어 저장"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "Enable Translations?"
+msgstr "번역을 활성화하시겠습니까?"
+
+msgid "NO"
+msgstr "아니요"
+
+msgid "YES"
+msgstr "예"
+
+msgid "Translations are enabled."
+msgstr "번역이 활성화되었습니다."
+
+msgid "Translations are disabled."
+msgstr "번역이 비활성화되었습니다."
+
+msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
+msgstr "*** 언어: @1은(는) @2을(를) 사용하고 있습니다. 번역기 언어: @3. 클라이언트 언어와 일치함: @4. 번역 활성화: @5."
+
 msgid "Your Current Language: @1."
 msgstr "현재 언어: @1."
 
@@ -13,12 +40,6 @@ msgstr "언어를 선택하세요"
 
 msgid "Choose Your Language:"
 msgstr "언어를 선택하세요:"
-
-msgid "Save Language"
-msgstr "언어 저장"
-
-msgid "Cancel"
-msgstr "취소"
 
 msgid "Invalid language selection."
 msgstr "잘못된 언어 선택입니다."
