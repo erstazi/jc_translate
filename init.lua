@@ -431,6 +431,14 @@ local function protect_urls_and_usernames(text)
     end
   )
 
+  -- Protect server commands.
+  text = text:gsub(
+    "(/[%w_%-]+)",
+    function(command)
+      return '<span translate="no">' .. command .. '</span>'
+    end
+  )
+
   local names = {}
 
   for _, player in ipairs(core.get_connected_players()) do
