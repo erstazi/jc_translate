@@ -82,6 +82,22 @@ msgid "Message sent."
 msgstr "تم إرسال الرسالة."
 
 #: init.lua
+msgid "Say something without translation"
+msgstr "قل شيئًا بدون ترجمة"
+
+#: init.lua
+msgid "Invalid usage, see /help say."
+msgstr "استخدام غير صالح، راجع /help say."
+
+#: init.lua
+msgid "Send a private message without translation"
+msgstr "إرسال رسالة خاصة بدون ترجمة"
+
+#: init.lua
+msgid "Invalid usage, see /help cmsg."
+msgstr "استخدام غير صالح، راجع /help cmsg."
+
+#: init.lua
 msgid "English"
 msgstr "الإنجليزية"
 

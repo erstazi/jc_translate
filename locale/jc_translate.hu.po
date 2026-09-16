@@ -82,6 +82,22 @@ msgid "Message sent."
 msgstr "Üzenet elküldve."
 
 #: init.lua
+msgid "Say something without translation"
+msgstr "Mondj valamit fordítás nélkül"
+
+#: init.lua
+msgid "Invalid usage, see /help say."
+msgstr "Érvénytelen használat, lásd: /help say."
+
+#: init.lua
+msgid "Send a private message without translation"
+msgstr "Privát üzenet küldése fordítás nélkül"
+
+#: init.lua
+msgid "Invalid usage, see /help cmsg."
+msgstr "Érvénytelen használat, lásd: /help cmsg."
+
+#: init.lua
 msgid "English"
 msgstr "Angol"
 

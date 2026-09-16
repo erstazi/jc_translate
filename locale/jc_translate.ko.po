@@ -82,6 +82,22 @@ msgid "Message sent."
 msgstr "메시지를 보냈습니다."
 
 #: init.lua
+msgid "Say something without translation"
+msgstr "번역 없이 말하기"
+
+#: init.lua
+msgid "Invalid usage, see /help say."
+msgstr "잘못된 사용법입니다. /help say를 참조하세요."
+
+#: init.lua
+msgid "Send a private message without translation"
+msgstr "번역 없이 비공개 메시지 보내기"
+
+#: init.lua
+msgid "Invalid usage, see /help cmsg."
+msgstr "잘못된 사용법입니다. /help cmsg를 참조하세요."
+
+#: init.lua
 msgid "English"
 msgstr "영어"
 

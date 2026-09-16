@@ -773,3 +773,64 @@ core.register_chatcommand("msg", {
     return true, S("Message sent.")
   end,
 })
+
+----------------------------------------------------------------
+-- Use /say to say something without
+-- translation directly in chat
+----------------------------------------------------------------
+core.register_chatcommand("say", {
+  params = "<message>",
+  description = S("Say something without translation"),
+  privs = {shout = true},
+
+  func = function(name, param)
+    if param == "" then
+      return false, S("Invalid usage, see /help say.")
+    end
+
+    -- Log the original message exactly as sent.
+    core.log("action", "SAY from " .. name .. ": " .. param)
+
+    -- Send exactly what the player typed to everyone.
+    core.chat_send_all("<" .. name .. "> " .. param)
+
+    return true
+  end,
+})
+
+----------------------------------------------------------------
+-- Use /cmsg to message something without
+-- translation directly in direct message
+----------------------------------------------------------------
+core.register_chatcommand("cmsg", {
+  params = "<player> <message>",
+  description = S("Send a private message without translation"),
+  privs = {shout = true},
+
+  func = function(name, param)
+    local sendto, message = param:match("^(%S+)%s(.+)$")
+
+    if not sendto then
+      return false, S("Invalid usage, see /help cmsg.")
+    end
+
+    local sender = core.get_player_by_name(name)
+    local recipient = core.get_player_by_name(sendto)
+
+    if not sender then
+      return false, S("Player not found.")
+    end
+
+    if not recipient then
+      return false, S("The player @1 is not online.", sendto)
+    end
+
+    -- Log the original PM exactly as sent.
+    core.log("action", "cmsg from " .. name .. " to " .. sendto .. ": " .. message)
+
+    -- Send exactly what the player typed. No translation.
+    core.chat_send_player(sendto, "PM from " .. name .. ": " .. message)
+
+    return true, S("Message sent.")
+  end,
+})

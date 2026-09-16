@@ -82,6 +82,22 @@ msgid "Message sent."
 msgstr "Đã gửi tin nhắn."
 
 #: init.lua
+msgid "Say something without translation"
+msgstr "Nói điều gì đó không cần dịch"
+
+#: init.lua
+msgid "Invalid usage, see /help say."
+msgstr "Cách sử dụng không hợp lệ, xem /help say."
+
+#: init.lua
+msgid "Send a private message without translation"
+msgstr "Gửi tin nhắn riêng không cần dịch"
+
+#: init.lua
+msgid "Invalid usage, see /help cmsg."
+msgstr "Cách sử dụng không hợp lệ, xem /help cmsg."
+
+#: init.lua
 msgid "English"
 msgstr "Tiếng Anh"
 
