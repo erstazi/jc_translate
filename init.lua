@@ -713,7 +713,6 @@ core.register_chatcommand("msg", {
   params = "<player> <message>",
   description = S("Send a private message"),
   privs = {shout = true},
-
   func = function(name, param)
     local sendto, message = param:match("^(%S+)%s(.+)$")
 
@@ -736,19 +735,31 @@ core.register_chatcommand("msg", {
     local target_language = get_player_language(recipient)
     local translations_enabled = get_translations_enabled(recipient)
 
+    -- Add the original PM to chat history.
+    if chat_history and chat_history.add_message then
+      chat_history.add_message(name, sendto, message)
+    end
+
+    -- Play the mailbox chime for the recipient.
+    if core.get_modpath("chat_history") then
+      core.sound_play("mailbox_chime", {to_player = sendto, gain = 0.5, loop = false})
+    end
+
     -- Log the original PM exactly as sent.
-    core.log("action", "PM from " .. name .. " to " .. sendto .. ": " .. message )
+    core.log("action", "PM from " .. name .. " to " .. sendto .. ": " .. message)
 
     -- If the recipient has translations disabled, send the original.
     if not translations_enabled then
-      core.chat_send_player(sendto, "PM from " .. name .. ": " .. message )
+      core.chat_send_player(sendto, "DM from " .. name .. ": " .. message)
+      core.chat_send_player(name, "DM to " .. sendto .. ": " .. message)
 
       return true, S("Message sent.")
     end
 
     -- Same language does not need translation.
     if source_language == target_language then
-      core.chat_send_player(sendto, "PM from " .. name .. ": " .. message )
+      core.chat_send_player(sendto, "DM from " .. name .. ": " .. message)
+      core.chat_send_player(name, "DM to " .. sendto .. ": " .. message)
 
       return true, S("Message sent.")
     end
@@ -763,10 +774,11 @@ core.register_chatcommand("msg", {
         local output = result or message
 
         if not result then
-          core.log("warning", "[" .. modname .. "] PM translation failed: " .. source_language .. " -> " .. target_language )
+          core.log("warning", "[" .. modname .. "] PM translation failed: " .. source_language .. " -> " .. target_language)
         end
 
-        core.chat_send_player(sendto, "PM from " .. name .. ": " .. output)
+        core.chat_send_player(sendto, "DM from " .. name .. ": " .. output)
+        core.chat_send_player(name, "DM to " .. sendto .. ": " .. message)
       end
     )
 
