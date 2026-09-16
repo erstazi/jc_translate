@@ -788,11 +788,14 @@ core.register_chatcommand("say", {
       return false, S("Invalid usage, see /help say.")
     end
 
+    local prefix = get_chat_prefix(name)
+    local prefix_text = get_chat_prefix_text(name)
+
     -- Log the original message exactly as sent.
-    core.log("action", "SAY from " .. name .. ": " .. param)
+    core.log("action", "SAY: " .. prefix_text .. "<" .. name .. ">: " .. param)
 
     -- Send exactly what the player typed to everyone.
-    core.chat_send_all("<" .. name .. "> " .. param)
+    core.chat_send_all(prefix .. "<" .. name .. "> " .. param)
 
     return true
   end,
