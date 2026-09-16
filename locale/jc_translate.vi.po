@@ -5,86 +5,134 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: init.lua
 msgid "Save"
 msgstr "Lưu"
 
+#: init.lua
 msgid "Save Language"
 msgstr "Lưu ngôn ngữ"
 
+#: init.lua
 msgid "Cancel"
 msgstr "Hủy"
 
+#: init.lua
 msgid "Enable Translations?"
 msgstr "Bật dịch?"
 
+#: init.lua
 msgid "NO"
 msgstr "KHÔNG"
 
+#: init.lua
 msgid "YES"
 msgstr "CÓ"
 
+#: init.lua
 msgid "Translations are enabled."
 msgstr "Đã bật dịch."
 
+#: init.lua
 msgid "Translations are disabled."
 msgstr "Đã tắt dịch."
 
+#: init.lua
 msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
 msgstr "*** NGÔN NGỮ: @1 đang sử dụng @2. Ngôn ngữ trình dịch: @3. Khớp với ngôn ngữ máy khách: @4. Đã bật dịch: @5."
 
+#: init.lua
 msgid "Your Current Language: @1."
 msgstr "Ngôn ngữ hiện tại của bạn: @1."
 
+#: init.lua
 msgid "Choose Your Language"
 msgstr "Chọn ngôn ngữ của bạn"
 
+#: init.lua
 msgid "Choose Your Language:"
 msgstr "Chọn ngôn ngữ của bạn:"
 
+#: init.lua
 msgid "Invalid language selection."
 msgstr "Lựa chọn ngôn ngữ không hợp lệ."
 
+#: init.lua
 msgid "Translation language set to @1."
 msgstr "Ngôn ngữ dịch đã được đặt thành @1."
 
+#: init.lua
+msgid "Send a private message"
+msgstr "Gửi tin nhắn riêng"
+
+#: init.lua
+msgid "Invalid usage, see /help msg."
+msgstr "Cách sử dụng không hợp lệ, xem /help msg."
+
+#: init.lua
+msgid "Player not found."
+msgstr "Không tìm thấy người chơi."
+
+#: init.lua
+msgid "The player @1 is not online."
+msgstr "Người chơi @1 không trực tuyến."
+
+#: init.lua
+msgid "Message sent."
+msgstr "Đã gửi tin nhắn."
+
+#: init.lua
 msgid "English"
 msgstr "Tiếng Anh"
 
+#: init.lua
 msgid "Spanish"
 msgstr "Tiếng Tây Ban Nha"
 
+#: init.lua
 msgid "French"
 msgstr "Tiếng Pháp"
 
+#: init.lua
 msgid "German"
 msgstr "Tiếng Đức"
 
+#: init.lua
 msgid "Polish"
 msgstr "Tiếng Ba Lan"
 
+#: init.lua
 msgid "Turkish"
 msgstr "Tiếng Thổ Nhĩ Kỳ"
 
+#: init.lua
 msgid "Chinese"
 msgstr "Tiếng Trung"
 
+#: init.lua
 msgid "Vietnamese"
 msgstr "Tiếng Việt"
 
+#: init.lua
 msgid "Russian"
 msgstr "Tiếng Nga"
 
+#: init.lua
 msgid "Ukrainian"
 msgstr "Tiếng Ukraina"
 
+#: init.lua
 msgid "Dutch"
 msgstr "Tiếng Hà Lan"
 
+#: init.lua
 msgid "Korean"
 msgstr "Tiếng Hàn"
 
+#: init.lua
 msgid "Arabic"
 msgstr "Tiếng Ả Rập"
 
+#: init.lua
 msgid "Hungarian"
 msgstr "Tiếng Hungary"

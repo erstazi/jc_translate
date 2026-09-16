@@ -5,86 +5,134 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: init.lua
 msgid "Save"
 msgstr "Enregistrer"
 
+#: init.lua
 msgid "Save Language"
 msgstr "Enregistrer la langue"
 
+#: init.lua
 msgid "Cancel"
 msgstr "Annuler"
 
+#: init.lua
 msgid "Enable Translations?"
 msgstr "Activer les traductions ?"
 
+#: init.lua
 msgid "NO"
 msgstr "NON"
 
+#: init.lua
 msgid "YES"
 msgstr "OUI"
 
+#: init.lua
 msgid "Translations are enabled."
 msgstr "Les traductions sont activées."
 
+#: init.lua
 msgid "Translations are disabled."
 msgstr "Les traductions sont désactivées."
 
+#: init.lua
 msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
 msgstr "*** LANGUE : @1 utilise @2. Langue du traducteur : @3. Correspond à la langue du client : @4. Traductions activées : @5."
 
+#: init.lua
 msgid "Your Current Language: @1."
 msgstr "Votre langue actuelle : @1."
 
+#: init.lua
 msgid "Choose Your Language"
 msgstr "Choisissez votre langue"
 
+#: init.lua
 msgid "Choose Your Language:"
 msgstr "Choisissez votre langue:"
 
+#: init.lua
 msgid "Invalid language selection."
 msgstr "Sélection de langue invalide."
 
+#: init.lua
 msgid "Translation language set to @1."
 msgstr "Langue de traduction définie sur @1."
 
+#: init.lua
+msgid "Send a private message"
+msgstr "Envoyer un message privé"
+
+#: init.lua
+msgid "Invalid usage, see /help msg."
+msgstr "Utilisation incorrecte, consultez /help msg."
+
+#: init.lua
+msgid "Player not found."
+msgstr "Joueur introuvable."
+
+#: init.lua
+msgid "The player @1 is not online."
+msgstr "Le joueur @1 n'est pas en ligne."
+
+#: init.lua
+msgid "Message sent."
+msgstr "Message envoyé."
+
+#: init.lua
 msgid "English"
 msgstr "Anglais"
 
+#: init.lua
 msgid "Spanish"
 msgstr "Espagnol"
 
+#: init.lua
 msgid "French"
 msgstr "Français"
 
+#: init.lua
 msgid "German"
 msgstr "Allemand"
 
+#: init.lua
 msgid "Polish"
 msgstr "Polonais"
 
+#: init.lua
 msgid "Turkish"
 msgstr "Turc"
 
+#: init.lua
 msgid "Chinese"
 msgstr "Chinois"
 
+#: init.lua
 msgid "Vietnamese"
 msgstr "Vietnamien"
 
+#: init.lua
 msgid "Russian"
 msgstr "Russe"
 
+#: init.lua
 msgid "Ukrainian"
 msgstr "Ukrainien"
 
+#: init.lua
 msgid "Dutch"
 msgstr "Néerlandais"
 
+#: init.lua
 msgid "Korean"
 msgstr "Coréen"
 
+#: init.lua
 msgid "Arabic"
 msgstr "Arabe"
 
+#: init.lua
 msgid "Hungarian"
 msgstr "Hongrois"

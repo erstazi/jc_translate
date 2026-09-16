@@ -2,26 +2,41 @@ local modname = core.get_current_modname()
 local S = core.get_translator(core.get_current_modname())
 local modpath = core.get_modpath(core.get_current_modname())
 local http = core.request_http_api and core.request_http_api()
-local mod_version = modname .. "/1.0.1"
+local mod_version = modname .. "/1.0.2"
 
+----------------------------------------------------------------
+-- Check if HTTP is available for the mod
+----------------------------------------------------------------
 if not http then
   core.log("error", "[" .. modname .. "] HTTP API is not available.")
   core.log("error", "[" .. modname .. "] Add " .. modname .. " to secure.http_mods in you minetest.conf.")
   return
 end
 
+----------------------------------------------------------------
+-- Your LibreTranslate API URL
+----------------------------------------------------------------
 local API_URL = core.settings:get("jc_translate.api_url")
 if not API_URL or API_URL == "" then
   core.log("error", "[" .. modname .. "] jc_translate.api_url is not configured.")
 end
 
+----------------------------------------------------------------
+-- Your LibreTranslate API KEY
+----------------------------------------------------------------
 local API_KEY = core.settings:get("jc_translate.api_key")
 if not API_KEY or API_KEY == "" then
   core.log("error", "[" .. modname .. "] jc_translate.api_key is not configured.")
 end
 
+----------------------------------------------------------------
+-- Your Timeout for the API
+----------------------------------------------------------------
 local HTTP_TIMEOUT = tonumber(core.settings:get("jc_translate.timeout")) or 10
 
+----------------------------------------------------------------
+-- Supported languages
+----------------------------------------------------------------
 local LANGUAGES = {
   en = "English",
   es = "Spanish",
@@ -39,6 +54,9 @@ local LANGUAGES = {
   hu = "Hungarian",
 }
 
+----------------------------------------------------------------
+-- Short hand for languages
+----------------------------------------------------------------
 local LANGUAGE_ORDER = {
   "en",
   "es",
@@ -56,6 +74,9 @@ local LANGUAGE_ORDER = {
   "hu",
 }
 
+----------------------------------------------------------------
+-- Helper function for normalizing lang
+----------------------------------------------------------------
 local function normalize_language(lang)
   if not lang or lang == "" then
     return "en"
@@ -78,6 +99,9 @@ local function normalize_language(lang)
   return "en"
 end
 
+----------------------------------------------------------------
+-- Detect the player's language from Luanti/Minetest
+----------------------------------------------------------------
 local function get_detected_language(name)
   local info = core.get_player_information(name)
   if not info then
@@ -87,6 +111,9 @@ local function get_detected_language(name)
   return normalize_language(info.lang_code)
 end
 
+----------------------------------------------------------------
+-- Get player's desired language
+----------------------------------------------------------------
 local function get_player_language(player)
   local meta = player:get_meta()
   local selected = meta:get_string("jc_translate:language")
@@ -97,11 +124,17 @@ local function get_player_language(player)
   return get_detected_language(player:get_player_name())
 end
 
+----------------------------------------------------------------
+-- Save th player's desired language
+----------------------------------------------------------------
 local function save_player_language(player, language)
   local meta = player:get_meta()
   meta:set_string("jc_translate:language", language)
 end
 
+----------------------------------------------------------------
+-- Check to see if the translations are enabled
+----------------------------------------------------------------
 local function get_translations_enabled(player)
   local meta = player:get_meta()
   local value = meta:get_string("jc_translate:enabled")
@@ -124,6 +157,9 @@ local function get_translations_enabled(player)
   return value == "yes"
 end
 
+----------------------------------------------------------------
+-- Save whether the translation service is enabled for player
+----------------------------------------------------------------
 local function save_translations_enabled(player, enabled)
   local meta = player:get_meta()
 
@@ -134,6 +170,9 @@ local function save_translations_enabled(player, enabled)
   end
 end
 
+----------------------------------------------------------------
+-- Get information about player's language
+----------------------------------------------------------------
 local function get_player_language_info(player)
   local name = player:get_player_name()
   local info = core.get_player_information(name)
@@ -163,6 +202,9 @@ local function get_player_language_info(player)
   }
 end
 
+----------------------------------------------------------------
+-- Get API language
+----------------------------------------------------------------
 local function get_api_language(language)
   if language == "zh" then
     return "zh-Hans"
@@ -171,10 +213,17 @@ local function get_api_language(language)
   return language
 end
 
+----------------------------------------------------------------
+-- Escape formspec helper
+----------------------------------------------------------------
 local function escape_formspec(text)
   return core.formspec_escape(text)
 end
 
+
+----------------------------------------------------------------
+-- Show the formspec for the player
+----------------------------------------------------------------
 local function show_language_formspec(name)
   local player = core.get_player_by_name(name)
   if not player then
@@ -211,6 +260,9 @@ local function show_language_formspec(name)
   core.show_formspec(name, "jc_translate:language", formspec )
 end
 
+----------------------------------------------------------------
+-- Command /lang for player
+----------------------------------------------------------------
 core.register_chatcommand("lang", {
   params = "",
   description = S("Choose Your Language"),
@@ -220,7 +272,9 @@ core.register_chatcommand("lang", {
   end,
 })
 
-
+----------------------------------------------------------------
+-- Receive fields from formspec
+----------------------------------------------------------------
 local pending_translations_enabled = {}
 
 core.register_on_player_receive_fields(function(player, formname, fields)
@@ -295,7 +349,10 @@ core.register_on_player_receive_fields(function(player, formname, fields)
   end
 end)
 
-
+----------------------------------------------------------------
+-- Handle when the player joins and set by default their
+-- preferred language from Luanti/Minetest
+----------------------------------------------------------------
 core.register_on_joinplayer(function(player)
   local name = player:get_player_name()
   local meta = player:get_meta()
@@ -370,6 +427,9 @@ core.register_on_joinplayer(function(player)
   end
 end)
 
+----------------------------------------------------------------
+-- Chat prefix text from ranks mod
+----------------------------------------------------------------
 local function get_chat_prefix_text(name)
   if core.get_modpath("ranks") and type(ranks) == "table" and ranks.get_rank and ranks.get_def then
     local rank = ranks.get_rank(name)
@@ -383,6 +443,9 @@ local function get_chat_prefix_text(name)
   return ""
 end
 
+----------------------------------------------------------------
+-- Color code the chat prefix from the chat prefix text
+----------------------------------------------------------------
 local function get_chat_prefix(name)
   if core.get_modpath("ranks") and type(ranks) == "table" and ranks.get_rank and ranks.get_def then
     local rank = ranks.get_rank(name)
@@ -410,6 +473,9 @@ local function get_chat_prefix(name)
   return ""
 end
 
+----------------------------------------------------------------
+-- Escape any XML/HTML entered in from chat
+----------------------------------------------------------------
 local function escape_html(text)
   text = text:gsub("&", "&amp;")
   text = text:gsub("<", "&lt;")
@@ -420,6 +486,10 @@ local function escape_html(text)
   return text
 end
 
+
+----------------------------------------------------------------
+-- Protect URLs, usernames, and /commands from translation
+----------------------------------------------------------------
 local function protect_urls_and_usernames(text)
   text = escape_html(text)
 
@@ -476,7 +546,9 @@ local function protect_urls_and_usernames(text)
   return text
 end
 
-
+----------------------------------------------------------------
+-- Remove the <span translate="no">blah</span> whe it comes back
+----------------------------------------------------------------
 local function remove_translate_no_spans(text)
   text = text:gsub('<span%s+translate%s*=%s*"no"%s*>(.-)</span>', "%1" )
   text = text .. " "
@@ -484,6 +556,9 @@ local function remove_translate_no_spans(text)
   return text
 end
 
+----------------------------------------------------------------
+-- Translate the text (the meat of it)
+----------------------------------------------------------------
 local function translate_text(text, source_language, target_language, callback)
   if source_language == target_language then
     callback(text)
@@ -543,6 +618,9 @@ local function translate_text(text, source_language, target_language, callback)
   end)
 end
 
+----------------------------------------------------------------
+-- Handle the chat messages
+----------------------------------------------------------------
 core.register_on_chat_message(function(name, message)
   local sender = core.get_player_by_name(name)
 
@@ -620,3 +698,78 @@ core.register_on_chat_message(function(name, message)
 
   return true
 end)
+
+----------------------------------------------------------------
+-- Swap out the /msg from Luanti/Minetest with our
+-- own implementation so we can translate messages too
+----------------------------------------------------------------
+local original_msg_command = core.registered_chatcommands["msg"]
+
+if original_msg_command then
+  core.unregister_chatcommand("msg")
+end
+
+core.register_chatcommand("msg", {
+  params = "<player> <message>",
+  description = S("Send a private message"),
+  privs = {shout = true},
+
+  func = function(name, param)
+    local sendto, message = param:match("^(%S+)%s(.+)$")
+
+    if not sendto then
+      return false, S("Invalid usage, see /help msg.")
+    end
+
+    local sender = core.get_player_by_name(name)
+    local recipient = core.get_player_by_name(sendto)
+
+    if not sender then
+      return false, S("Player not found.")
+    end
+
+    if not recipient then
+      return false, S("The player @1 is not online.", sendto)
+    end
+
+    local source_language = get_player_language(sender)
+    local target_language = get_player_language(recipient)
+    local translations_enabled = get_translations_enabled(recipient)
+
+    -- Log the original PM exactly as sent.
+    core.log("action", "PM from " .. name .. " to " .. sendto .. ": " .. message )
+
+    -- If the recipient has translations disabled, send the original.
+    if not translations_enabled then
+      core.chat_send_player(sendto, "PM from " .. name .. ": " .. message )
+
+      return true, S("Message sent.")
+    end
+
+    -- Same language does not need translation.
+    if source_language == target_language then
+      core.chat_send_player(sendto, "PM from " .. name .. ": " .. message )
+
+      return true, S("Message sent.")
+    end
+
+    -- Translate the PM for the recipient.
+    translate_text(
+      message,
+      source_language,
+      target_language,
+      function(result)
+
+        local output = result or message
+
+        if not result then
+          core.log("warning", "[" .. modname .. "] PM translation failed: " .. source_language .. " -> " .. target_language )
+        end
+
+        core.chat_send_player(sendto, "PM from " .. name .. ": " .. output)
+      end
+    )
+
+    return true, S("Message sent.")
+  end,
+})

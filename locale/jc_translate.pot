@@ -17,21 +17,27 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#: init.lua
 msgid "Enable Translations?"
 msgstr ""
 
+#: init.lua
 msgid "NO"
 msgstr ""
 
+#: init.lua
 msgid "YES"
 msgstr ""
 
+#: init.lua
 msgid "Translations are enabled."
 msgstr ""
 
+#: init.lua
 msgid "Translations are disabled."
 msgstr ""
 
+#: init.lua
 msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
 msgstr ""
 
@@ -53,6 +59,26 @@ msgstr ""
 
 #: init.lua
 msgid "Translation language set to @1."
+msgstr ""
+
+#: init.lua
+msgid "Send a private message"
+msgstr ""
+
+#: init.lua
+msgid "Invalid usage, see /help msg."
+msgstr ""
+
+#: init.lua
+msgid "Player not found."
+msgstr ""
+
+#: init.lua
+msgid "The player @1 is not online."
+msgstr ""
+
+#: init.lua
+msgid "Message sent."
 msgstr ""
 
 #: init.lua

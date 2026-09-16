@@ -5,86 +5,134 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: init.lua
 msgid "Save"
 msgstr "저장"
 
+#: init.lua
 msgid "Save Language"
 msgstr "언어 저장"
 
+#: init.lua
 msgid "Cancel"
 msgstr "취소"
 
+#: init.lua
 msgid "Enable Translations?"
 msgstr "번역을 활성화하시겠습니까?"
 
+#: init.lua
 msgid "NO"
 msgstr "아니요"
 
+#: init.lua
 msgid "YES"
 msgstr "예"
 
+#: init.lua
 msgid "Translations are enabled."
 msgstr "번역이 활성화되었습니다."
 
+#: init.lua
 msgid "Translations are disabled."
 msgstr "번역이 비활성화되었습니다."
 
+#: init.lua
 msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
 msgstr "*** 언어: @1은(는) @2을(를) 사용하고 있습니다. 번역기 언어: @3. 클라이언트 언어와 일치함: @4. 번역 활성화: @5."
 
+#: init.lua
 msgid "Your Current Language: @1."
 msgstr "현재 언어: @1."
 
+#: init.lua
 msgid "Choose Your Language"
 msgstr "언어를 선택하세요"
 
+#: init.lua
 msgid "Choose Your Language:"
 msgstr "언어를 선택하세요:"
 
+#: init.lua
 msgid "Invalid language selection."
 msgstr "잘못된 언어 선택입니다."
 
+#: init.lua
 msgid "Translation language set to @1."
 msgstr "번역 언어가 @1(으)로 설정되었습니다."
 
+#: init.lua
+msgid "Send a private message"
+msgstr "비공개 메시지 보내기"
+
+#: init.lua
+msgid "Invalid usage, see /help msg."
+msgstr "잘못된 사용법입니다. /help msg를 참조하세요."
+
+#: init.lua
+msgid "Player not found."
+msgstr "플레이어를 찾을 수 없습니다."
+
+#: init.lua
+msgid "The player @1 is not online."
+msgstr "플레이어 @1은(는) 온라인 상태가 아닙니다."
+
+#: init.lua
+msgid "Message sent."
+msgstr "메시지를 보냈습니다."
+
+#: init.lua
 msgid "English"
 msgstr "영어"
 
+#: init.lua
 msgid "Spanish"
 msgstr "스페인어"
 
+#: init.lua
 msgid "French"
 msgstr "프랑스어"
 
+#: init.lua
 msgid "German"
 msgstr "독일어"
 
+#: init.lua
 msgid "Polish"
 msgstr "폴란드어"
 
+#: init.lua
 msgid "Turkish"
 msgstr "터키어"
 
+#: init.lua
 msgid "Chinese"
 msgstr "중국어"
 
+#: init.lua
 msgid "Vietnamese"
 msgstr "베트남어"
 
+#: init.lua
 msgid "Russian"
 msgstr "러시아어"
 
+#: init.lua
 msgid "Ukrainian"
 msgstr "우크라이나어"
 
+#: init.lua
 msgid "Dutch"
 msgstr "네덜란드어"
 
+#: init.lua
 msgid "Korean"
 msgstr "한국어"
 
+#: init.lua
 msgid "Arabic"
 msgstr "아랍어"
 
+#: init.lua
 msgid "Hungarian"
 msgstr "헝가리어"

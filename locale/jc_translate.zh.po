@@ -5,86 +5,134 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: init.lua
 msgid "Save"
 msgstr "儲存"
 
+#: init.lua
 msgid "Save Language"
 msgstr "保存语言"
 
+#: init.lua
 msgid "Cancel"
 msgstr "取消"
 
+#: init.lua
 msgid "Enable Translations?"
 msgstr "啟用翻譯？"
 
+#: init.lua
 msgid "NO"
 msgstr "否"
 
+#: init.lua
 msgid "YES"
 msgstr "是"
 
+#: init.lua
 msgid "Translations are enabled."
 msgstr "翻譯已啟用。"
 
+#: init.lua
 msgid "Translations are disabled."
 msgstr "翻譯已停用。"
 
+#: init.lua
 msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
 msgstr "*** 語言：@1 正在使用 @2。翻譯器語言：@3。與用戶端語言相符：@4。翻譯已啟用：@5。"
 
+#: init.lua
 msgid "Your Current Language: @1."
 msgstr "您当前的语言：@1。"
 
+#: init.lua
 msgid "Choose Your Language"
 msgstr "选择您的语言"
 
+#: init.lua
 msgid "Choose Your Language:"
 msgstr "选择您的语言："
 
+#: init.lua
 msgid "Invalid language selection."
 msgstr "无效的语言选择。"
 
+#: init.lua
 msgid "Translation language set to @1."
 msgstr "翻译语言已设置为 @1。"
 
+#: init.lua
+msgid "Send a private message"
+msgstr "發送私訊"
+
+#: init.lua
+msgid "Invalid usage, see /help msg."
+msgstr "用法無效，請參閱 /help msg。"
+
+#: init.lua
+msgid "Player not found."
+msgstr "找不到玩家。"
+
+#: init.lua
+msgid "The player @1 is not online."
+msgstr "玩家 @1 不在線。"
+
+#: init.lua
+msgid "Message sent."
+msgstr "訊息已發送。"
+
+#: init.lua
 msgid "English"
 msgstr "英语"
 
+#: init.lua
 msgid "Spanish"
 msgstr "西班牙语"
 
+#: init.lua
 msgid "French"
 msgstr "法语"
 
+#: init.lua
 msgid "German"
 msgstr "德语"
 
+#: init.lua
 msgid "Polish"
 msgstr "波兰语"
 
+#: init.lua
 msgid "Turkish"
 msgstr "土耳其语"
 
+#: init.lua
 msgid "Chinese"
 msgstr "中文"
 
+#: init.lua
 msgid "Vietnamese"
 msgstr "越南语"
 
+#: init.lua
 msgid "Russian"
 msgstr "俄语"
 
+#: init.lua
 msgid "Ukrainian"
 msgstr "乌克兰语"
 
+#: init.lua
 msgid "Dutch"
 msgstr "荷兰语"
 
+#: init.lua
 msgid "Korean"
 msgstr "韩语"
 
+#: init.lua
 msgid "Arabic"
 msgstr "阿拉伯语"
 
+#: init.lua
 msgid "Hungarian"
 msgstr "匈牙利语"

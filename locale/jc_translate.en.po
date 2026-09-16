@@ -5,86 +5,134 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: init.lua
 msgid "Save"
 msgstr "Save"
 
+#: init.lua
 msgid "Save Language"
 msgstr "Save Language"
 
+#: init.lua
 msgid "Cancel"
 msgstr "Cancel"
 
+#: init.lua
 msgid "Enable Translations?"
 msgstr "Enable Translations?"
 
+#: init.lua
 msgid "NO"
 msgstr "NO"
 
+#: init.lua
 msgid "YES"
 msgstr "YES"
 
+#: init.lua
 msgid "Translations are enabled."
 msgstr "Translations are enabled."
 
+#: init.lua
 msgid "Translations are disabled."
 msgstr "Translations are disabled."
 
+#: init.lua
 msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
 msgstr "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
 
+#: init.lua
 msgid "Your Current Language: @1."
 msgstr "Your Current Language: @1."
 
+#: init.lua
 msgid "Choose Your Language"
 msgstr "Choose Your Language"
 
+#: init.lua
 msgid "Choose Your Language:"
 msgstr "Choose Your Language:"
 
+#: init.lua
 msgid "Invalid language selection."
 msgstr "Invalid language selection."
 
+#: init.lua
 msgid "Translation language set to @1."
 msgstr "Translation language set to @1."
 
+#: init.lua
+msgid "Send a private message"
+msgstr "Send a private message"
+
+#: init.lua
+msgid "Invalid usage, see /help msg."
+msgstr "Invalid usage, see /help msg."
+
+#: init.lua
+msgid "Player not found."
+msgstr "Player not found."
+
+#: init.lua
+msgid "The player @1 is not online."
+msgstr "The player @1 is not online."
+
+#: init.lua
+msgid "Message sent."
+msgstr "Message sent."
+
+#: init.lua
 msgid "English"
 msgstr "English"
 
+#: init.lua
 msgid "Spanish"
 msgstr "Spanish"
 
+#: init.lua
 msgid "French"
 msgstr "French"
 
+#: init.lua
 msgid "German"
 msgstr "German"
 
+#: init.lua
 msgid "Polish"
 msgstr "Polish"
 
+#: init.lua
 msgid "Turkish"
 msgstr "Turkish"
 
+#: init.lua
 msgid "Chinese"
 msgstr "Chinese"
 
+#: init.lua
 msgid "Vietnamese"
 msgstr "Vietnamese"
 
+#: init.lua
 msgid "Russian"
 msgstr "Russian"
 
+#: init.lua
 msgid "Ukrainian"
 msgstr "Ukrainian"
 
+#: init.lua
 msgid "Dutch"
 msgstr "Dutch"
 
+#: init.lua
 msgid "Korean"
 msgstr "Korean"
 
+#: init.lua
 msgid "Arabic"
 msgstr "Arabic"
 
+#: init.lua
 msgid "Hungarian"
 msgstr "Hungarian"
