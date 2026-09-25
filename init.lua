@@ -412,14 +412,14 @@ core.register_on_joinplayer(function(player)
       core.chat_send_player(
         staff_name,
         core.colorize(
-          "#00FF00",
+          "#FFFFFF",
           S(
             "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5.",
-            name,
-            client_language,
-            translator_language,
-            match_text,
-            translation_status
+            core.colorize("#00FF00", name),
+            core.colorize("#FFFF00", client_language),
+            core.colorize("#FFFF00", translator_language),
+            core.colorize("#FFFF00", match_text),
+            core.colorize("#FFFF00", translation_status)
           )
         )
       )
