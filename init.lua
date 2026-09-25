@@ -2,7 +2,8 @@ local modname = core.get_current_modname()
 local S = core.get_translator(core.get_current_modname())
 local modpath = core.get_modpath(core.get_current_modname())
 local http = core.request_http_api and core.request_http_api()
-local mod_version = modname .. "/1.0.2"
+local ESC = core.formspec_escape
+local mod_version = modname .. "/1.0.3"
 
 ----------------------------------------------------------------
 -- Check if HTTP is available for the mod
@@ -50,7 +51,7 @@ local LANGUAGES = {
   uk = "Ukrainian",
   nl = "Dutch",
   ko = "Korean",
-  ar = "Arabic",
+  -- ar = "Arabic",
   hu = "Hungarian",
 }
 
@@ -70,7 +71,7 @@ local LANGUAGE_ORDER = {
   "uk",
   "nl",
   "ko",
-  "ar",
+  -- "ar",
   "hu",
 }
 
@@ -122,6 +123,41 @@ local function get_player_language(player)
   end
 
   return get_detected_language(player:get_player_name())
+end
+
+----------------------------------------------------------------
+-- Get players with languages
+----------------------------------------------------------------
+local function get_players_with_languages()
+  local players = {}
+
+  for _, player in ipairs(core.get_connected_players()) do
+    local player_name = player:get_player_name()
+    local meta = player:get_meta()
+    local language = meta:get_string("jc_translate:language")
+
+    if language ~= "" then
+      local enabled = meta:get_string("jc_translate:enabled")
+
+      if enabled == "yes" then
+        enabled = S("ON")
+      else
+        enabled = S("OFF")
+      end
+
+      players[#players + 1] = {
+        name = player_name,
+        language = language,
+        enabled = enabled,
+      }
+    end
+  end
+
+  table.sort(players, function(a, b)
+    return a.name:lower() < b.name:lower()
+  end)
+
+  return players
 end
 
 ----------------------------------------------------------------
@@ -214,14 +250,6 @@ local function get_api_language(language)
 end
 
 ----------------------------------------------------------------
--- Escape formspec helper
-----------------------------------------------------------------
-local function escape_formspec(text)
-  return core.formspec_escape(text)
-end
-
-
-----------------------------------------------------------------
 -- Show the formspec for the player
 ----------------------------------------------------------------
 local function show_language_formspec(name)
@@ -246,15 +274,33 @@ local function show_language_formspec(name)
 
   local current_language = S(LANGUAGES[current] or current)
 
+  local players_with_languages = get_players_with_languages()
+  local player_rows = {}
+
+  for _, player_data in ipairs(players_with_languages) do
+    local player_data_language = ""
+
+    if player_data.language ~= "" then
+      player_data_language = " (" .. player_data.language .. ")"
+    end
+
+    player_rows[#player_rows + 1] = ESC(player_data.name .. player_data_language .. " - " .. player_data.enabled)
+  end
+
   local formspec = table.concat({
     "formspec_version[6]",
-    "size[9.5,8]",
-    "label[0.5,0.4;" .. S("Your Current Language: @1.", core.colorize("#FFFF00", escape_formspec(current_language) ) ) .. "]",
-    "label[0.5,1.1;" .. escape_formspec(S("Choose Your Language:")) .. "]",
-    "dropdown[0.5,1.4;7,0.8;language;", table.concat(language_list, ","), ";" .. current_index .. ";false]",
-    "checkbox[0.5,2.7;enable;" .. escape_formspec(S("Enable Translations?")) .. ";" .. (translations_enabled and "true" or "false") .. "]",
-    "button_exit[0.5,6.8;4,1;cancel;" .. escape_formspec(S("Cancel")) .. "]",
-    "button_exit[4.8,6.8;4,1;save;" .. escape_formspec(S("Save")) .. "]",
+    "size[13,8]",
+    "label[0.5,0.4;" .. S("Your Current Language: @1.", core.colorize("#FFFF00", ESC(current_language))) .. "]",
+
+    "label[0.5,1.1;" .. ESC(S("Choose Your Language:")) .. "]",
+    "dropdown[0.5,1.4;6.5,0.8;language;" .. table.concat(language_list, ",") .. ";" .. current_index .. ";false]",
+    "checkbox[0.5,2.7;enable;" .. ESC(S("Enable Translations?")) .. ";" .. (translations_enabled and "true" or "false") .. "]",
+
+    "label[7.5,0.4;" .. ESC(S("Players with Languages")) .. "]",
+    "textlist[7.5,0.8;5,5.2;players;" .. table.concat(player_rows, ",") .. ";0;false]",
+
+    "button_exit[0.5,6.8;3,1;cancel;" .. ESC(S("Cancel")) .. "]",
+    "button_exit[4,6.8;3,1;save;" .. ESC(S("Save")) .. "]",
   })
 
   core.show_formspec(name, "jc_translate:language", formspec )

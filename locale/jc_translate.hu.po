@@ -98,6 +98,18 @@ msgid "Invalid usage, see /help cmsg."
 msgstr "Érvénytelen használat, lásd: /help cmsg."
 
 #: init.lua
+msgid "Players with Languages"
+msgstr "Nyelvekkel rendelkező játékosok"
+
+#: init.lua
+msgid "ON"
+msgstr "BE"
+
+#: init.lua
+msgid "OFF"
+msgstr "KI"
+
+#: init.lua
 msgid "English"
 msgstr "Angol"
 

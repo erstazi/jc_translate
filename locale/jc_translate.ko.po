@@ -98,6 +98,18 @@ msgid "Invalid usage, see /help cmsg."
 msgstr "잘못된 사용법입니다. /help cmsg를 참조하세요."
 
 #: init.lua
+msgid "Players with Languages"
+msgstr "언어가 설정된 플레이어"
+
+#: init.lua
+msgid "ON"
+msgstr "켜짐"
+
+#: init.lua
+msgid "OFF"
+msgstr "꺼짐"
+
+#: init.lua
 msgid "English"
 msgstr "영어"
 

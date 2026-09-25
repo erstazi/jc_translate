@@ -98,6 +98,18 @@ msgid "Invalid usage, see /help cmsg."
 msgstr "Invalid usage, see /help cmsg."
 
 #: init.lua
+msgid "Players with Languages"
+msgstr "Players with Languages"
+
+#: init.lua
+msgid "ON"
+msgstr "ON"
+
+#: init.lua
+msgid "OFF"
+msgstr "OFF"
+
+#: init.lua
 msgid "English"
 msgstr "English"
 
