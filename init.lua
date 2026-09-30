@@ -3,7 +3,9 @@ local S = core.get_translator(core.get_current_modname())
 local modpath = core.get_modpath(core.get_current_modname())
 local http = core.request_http_api and core.request_http_api()
 local ESC = core.formspec_escape
-local mod_version = modname .. "/1.0.3"
+local mod_version = modname .. "/1.0.4"
+
+jc_translate = {}
 
 ----------------------------------------------------------------
 -- Check if HTTP is available for the mod
@@ -605,6 +607,7 @@ end
 ----------------------------------------------------------------
 -- Translate the text (the meat of it)
 ----------------------------------------------------------------
+--[[
 local function translate_text(text, source_language, target_language, callback)
   if source_language == target_language then
     callback(text)
@@ -662,6 +665,135 @@ local function translate_text(text, source_language, target_language, callback)
 
     callback(restored)
   end)
+end
+]]
+
+local function translate_text(text, source_language, target_language, callback)
+  if source_language ~= "auto" and source_language == target_language then
+    callback(text)
+    return
+  end
+
+  local protected_text = protect_urls_and_usernames(text)
+
+  if not API_KEY or API_KEY == "" then
+    callback(nil, "API key is not configured")
+    return
+  end
+
+  local source = source_language == "auto" and "auto" or get_api_language(source_language)
+
+  local target = get_api_language(target_language)
+
+  local request_data = core.write_json({
+    q = protected_text,
+    source = source,
+    target = target,
+    format = "html",
+    api_key = API_KEY,
+  })
+
+  http.fetch({
+    url = API_URL,
+    method = "POST",
+    data = request_data,
+    timeout = HTTP_TIMEOUT,
+    extra_headers = {
+      "Content-Type: application/json",
+      "Accept: application/json",
+    },
+    user_agent = mod_version,
+  }, function(result)
+
+    if not result.succeeded then
+      callback(nil, "HTTP request failed")
+      return
+    end
+
+    if result.code ~= 200 then
+      callback(nil, "HTTP " .. tostring(result.code))
+      return
+    end
+
+    local data = core.parse_json(result.data)
+
+    if not data or not data.translatedText then
+      callback(nil, "Invalid LibreTranslate response")
+      return
+    end
+
+    local restored = remove_translate_no_spans(data.translatedText)
+
+    callback(restored)
+  end)
+end
+
+local function detect_language(text, callback)
+  if not API_KEY or API_KEY == "" then
+    callback(nil, "API key is not configured")
+    return
+  end
+
+  local protected_text = protect_urls_and_usernames(text)
+
+  local request_data = core.write_json({
+    q = protected_text,
+    api_key = API_KEY,
+  })
+
+  http.fetch({
+    url = API_URL:gsub("/translate$", "/detect"),
+    method = "POST",
+    data = request_data,
+    timeout = HTTP_TIMEOUT,
+    extra_headers = {
+      "Content-Type: application/json",
+      "Accept: application/json",
+    },
+    user_agent = mod_version,
+  }, function(result)
+    if not result.succeeded then
+      callback(nil, "HTTP request failed")
+      return
+    end
+
+    if result.code ~= 200 then
+      callback(nil, "HTTP " .. tostring(result.code))
+      return
+    end
+
+    local data = core.parse_json(result.data)
+
+    if type(data) ~= "table" or not data[1] then
+      callback(nil, "Invalid LibreTranslate response")
+      return
+    end
+
+    local detected = data[1]
+
+    if not detected.language then
+      callback(nil, "No language detected")
+      return
+    end
+
+    callback(detected.language, nil, detected.confidence)
+  end)
+end
+
+function jc_translate.detect_language(text, callback)
+  detect_language(text, callback)
+end
+
+function jc_translate.translate(text, source_language, target_language, callback)
+  translate_text(text, source_language, target_language, callback)
+end
+
+function jc_translate.get_language(player)
+  return get_player_language(player)
+end
+
+function jc_translate.is_enabled(player)
+  return get_translations_enabled(player)
 end
 
 ----------------------------------------------------------------
