@@ -776,7 +776,7 @@ local function detect_language(text, callback)
       return
     end
 
-    callback(detected.language, nil, detected.confidence)
+    callback( normalize_language(detected.language), nil, tonumber(detected.confidence) or 0 )
   end)
 end
 
