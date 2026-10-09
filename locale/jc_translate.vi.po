@@ -118,6 +118,10 @@ msgid "Spanish"
 msgstr "Tiếng Tây Ban Nha"
 
 #: init.lua
+msgid "Portuguese"
+msgstr "Tiếng Bồ Đào Nha"
+
+#: init.lua
 msgid "French"
 msgstr "Tiếng Pháp"
 

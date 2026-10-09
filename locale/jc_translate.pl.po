@@ -118,6 +118,10 @@ msgid "Spanish"
 msgstr "Hiszpański"
 
 #: init.lua
+msgid "Portuguese"
+msgstr "Portugalski"
+
+#: init.lua
 msgid "French"
 msgstr "Francuski"
 

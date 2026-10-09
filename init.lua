@@ -55,6 +55,7 @@ local LANGUAGES = {
   ko = "Korean",
   -- ar = "Arabic",
   hu = "Hungarian",
+  pt = "Portuguese",
 }
 
 ----------------------------------------------------------------
@@ -75,6 +76,7 @@ local LANGUAGE_ORDER = {
   "ko",
   -- "ar",
   "hu",
+  "pt",
 }
 
 ----------------------------------------------------------------
@@ -92,6 +94,12 @@ local function normalize_language(lang)
     or lang == "zh-hans"
     or lang == "zh-hans-cn" then
     return "zh"
+  end
+
+  if lang == "pt"
+    or lang == "pt-br"
+    or lang == "pt-pt" then
+    return "pt"
   end
 
   local base = lang:match("^([a-z][a-z])")

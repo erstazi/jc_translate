@@ -1,0 +1,170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jc_translate\n"
+"Language: pt_BR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: init.lua
+msgid "Save"
+msgstr "Salvar"
+
+#: init.lua
+msgid "Save Language"
+msgstr "Salvar idioma"
+
+#: init.lua
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: init.lua
+msgid "Enable Translations?"
+msgstr "Ativar traduções?"
+
+#: init.lua
+msgid "NO"
+msgstr "NÃO"
+
+#: init.lua
+msgid "YES"
+msgstr "SIM"
+
+#: init.lua
+msgid "Translations are enabled."
+msgstr "As traduções estão ativadas."
+
+#: init.lua
+msgid "Translations are disabled."
+msgstr "As traduções estão desativadas."
+
+#: init.lua
+msgid "*** LANGUAGE: @1 is using @2. Translator language: @3. Matches client language: @4. Translations enabled: @5."
+msgstr "*** IDIOMA: @1 está usando @2. Idioma do tradutor: @3. Corresponde ao idioma do cliente: @4. Traduções ativadas: @5."
+
+#: init.lua
+msgid "Your Current Language: @1."
+msgstr "Seu idioma atual: @1."
+
+#: init.lua
+msgid "Choose Your Language"
+msgstr "Escolha seu idioma"
+
+#: init.lua
+msgid "Choose Your Language:"
+msgstr "Escolha seu idioma:"
+
+#: init.lua
+msgid "Invalid language selection."
+msgstr "Seleção de idioma inválida."
+
+#: init.lua
+msgid "Translation language set to @1."
+msgstr "Idioma de tradução definido como @1."
+
+#: init.lua
+msgid "Send a private message"
+msgstr "Enviar uma mensagem privada"
+
+#: init.lua
+msgid "Invalid usage, see /help msg."
+msgstr "Uso inválido, consulte /help msg."
+
+#: init.lua
+msgid "Player not found."
+msgstr "Jogador não encontrado."
+
+#: init.lua
+msgid "The player @1 is not online."
+msgstr "O jogador @1 não está online."
+
+#: init.lua
+msgid "Message sent."
+msgstr "Mensagem enviada."
+
+#: init.lua
+msgid "Say something without translation"
+msgstr "Dizer algo sem tradução"
+
+#: init.lua
+msgid "Invalid usage, see /help say."
+msgstr "Uso inválido, consulte /help say."
+
+#: init.lua
+msgid "Send a private message without translation"
+msgstr "Enviar uma mensagem privada sem tradução"
+
+#: init.lua
+msgid "Invalid usage, see /help cmsg."
+msgstr "Uso inválido, consulte /help cmsg."
+
+#: init.lua
+msgid "Players with Languages"
+msgstr "Jogadores e seus idiomas"
+
+#: init.lua
+msgid "ON"
+msgstr "LIGADO"
+
+#: init.lua
+msgid "OFF"
+msgstr "DESLIGADO"
+
+#: init.lua
+msgid "English"
+msgstr "Inglês"
+
+#: init.lua
+msgid "Spanish"
+msgstr "Espanhol"
+
+#: init.lua
+msgid "Portuguese"
+msgstr "Português"
+
+#: init.lua
+msgid "French"
+msgstr "Francês"
+
+#: init.lua
+msgid "German"
+msgstr "Alemão"
+
+#: init.lua
+msgid "Polish"
+msgstr "Polonês"
+
+#: init.lua
+msgid "Turkish"
+msgstr "Turco"
+
+#: init.lua
+msgid "Chinese"
+msgstr "Chinês"
+
+#: init.lua
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+#: init.lua
+msgid "Russian"
+msgstr "Russo"
+
+#: init.lua
+msgid "Ukrainian"
+msgstr "Ucraniano"
+
+#: init.lua
+msgid "Dutch"
+msgstr "Holandês"
+
+#: init.lua
+msgid "Korean"
+msgstr "Coreano"
+
+#: init.lua
+msgid "Arabic"
+msgstr "Árabe"
+
+#: init.lua
+msgid "Hungarian"
+msgstr "Húngaro"
