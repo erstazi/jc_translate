@@ -43,6 +43,7 @@ local HTTP_TIMEOUT = tonumber(core.settings:get("jc_translate.timeout")) or 10
 local LANGUAGES = {
   en = "English",
   es = "Spanish",
+  pt = "Portuguese",
   fr = "French",
   de = "German",
   pl = "Polish",
@@ -55,7 +56,6 @@ local LANGUAGES = {
   ko = "Korean",
   -- ar = "Arabic",
   hu = "Hungarian",
-  pt = "Portuguese",
 }
 
 ----------------------------------------------------------------
@@ -64,6 +64,7 @@ local LANGUAGES = {
 local LANGUAGE_ORDER = {
   "en",
   "es",
+  "pt",
   "fr",
   "de",
   "pl",
@@ -76,7 +77,6 @@ local LANGUAGE_ORDER = {
   "ko",
   -- "ar",
   "hu",
-  "pt",
 }
 
 ----------------------------------------------------------------
