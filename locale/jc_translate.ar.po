@@ -6,6 +6,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: init.lua
+msgid "Set a player's translation language"
+msgstr "تعيين لغة الترجمة للاعب"
+
+#: init.lua
+msgid "Usage: /setlang <player> <language>"
+msgstr "طريقة الاستخدام: /setlang <player> <language>"
+
+#: init.lua
+msgid "Invalid language. Available languages: @1"
+msgstr "لغة غير صالحة. اللغات المتاحة: @1"
+
+#: init.lua
+msgid "Set @1's translation language to @2."
+msgstr "تم تعيين لغة الترجمة للاعب @1 إلى @2."
+
+#: init.lua
 msgid "Save"
 msgstr "حفظ"
 

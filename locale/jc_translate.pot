@@ -6,6 +6,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: init.lua
+msgid "Set a player's translation language"
+msgstr ""
+
+#: init.lua
+msgid "Usage: /setlang <player> <language>"
+msgstr ""
+
+#: init.lua
+msgid "Invalid language. Available languages: @1"
+msgstr ""
+
+#: init.lua
+msgid "Set @1's translation language to @2."
+msgstr ""
+
+#: init.lua
 msgid "Save"
 msgstr ""
 

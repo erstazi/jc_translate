@@ -6,6 +6,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: init.lua
+msgid "Set a player's translation language"
+msgstr "플레이어의 번역 언어 설정"
+
+#: init.lua
+msgid "Usage: /setlang <player> <language>"
+msgstr "사용법: /setlang <player> <language>"
+
+#: init.lua
+msgid "Invalid language. Available languages: @1"
+msgstr "잘못된 언어입니다. 사용 가능한 언어: @1"
+
+#: init.lua
+msgid "Set @1's translation language to @2."
+msgstr "@1의 번역 언어가 @2(으)로 설정되었습니다."
+
+#: init.lua
 msgid "Save"
 msgstr "저장"
 

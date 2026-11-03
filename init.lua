@@ -4,6 +4,7 @@ local modpath = core.get_modpath(core.get_current_modname())
 local http = core.request_http_api and core.request_http_api()
 local ESC = core.formspec_escape
 local mod_version = modname .. "/1.0.4"
+local storage = core.get_mod_storage()
 
 jc_translate = {}
 
@@ -329,6 +330,44 @@ core.register_chatcommand("lang", {
 })
 
 ----------------------------------------------------------------
+-- Command /setlang for server administrators
+----------------------------------------------------------------
+core.register_chatcommand("setlang", {
+  params = "<player> <language>",
+  description = S("Set a player's translation language"),
+  privs = {server = true},
+
+  func = function(name, param)
+    local target_name, language = param:match("^(%S+)%s+(%S+)$")
+
+    if not target_name or not language then
+      return false, S("Usage: /setlang <player> <language>")
+    end
+
+    language = language:lower()
+
+    if not LANGUAGES[language] then
+      local available = table.concat(LANGUAGE_ORDER, ", ")
+      return false, S("Invalid language. Available languages: @1", available)
+    end
+
+    local player = core.get_player_by_name(target_name)
+
+    if player then
+      -- Player is online: update metadata immediately.
+      save_player_language(player, language)
+    else
+      -- Player is offline: save an override for their next join.
+      storage:set_string("offline_language:" .. target_name, language)
+    end
+
+    core.log("action", "[" .. modname .. "] " .. name .. " set " .. target_name .. "'s translation language to " .. language )
+
+    return true, S( "Set @1's translation language to @2.", target_name, S(LANGUAGES[language]) )
+  end,
+})
+
+----------------------------------------------------------------
 -- Receive fields from formspec
 ----------------------------------------------------------------
 local pending_translations_enabled = {}
@@ -412,6 +451,17 @@ end)
 core.register_on_joinplayer(function(player)
   local name = player:get_player_name()
   local meta = player:get_meta()
+
+  -- Apply an administrator's offline language change.
+  local offline_language = storage:get_string("offline_language:" .. name)
+
+  if offline_language ~= "" and LANGUAGES[offline_language] then
+    save_player_language(player, offline_language)
+    storage:set_string("offline_language:" .. name, "")
+
+    core.log("action", "[" .. modname .. "] Applied offline language change for " .. name .. ": " .. offline_language )
+  end
+
   local stored = meta:get_string("jc_translate:language")
 
   if stored == "" then
